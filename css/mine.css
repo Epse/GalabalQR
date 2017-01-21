@@ -1,3 +1,12 @@
+body {
+    background-color: rgb(109, 182, 73);
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSIxMDAiPgo8cmVjdCB3aWR0aD0iNTYiIGhlaWdodD0iMTAwIiBmaWxsPSIjNmRiNjQ5Ij48L3JlY3Q+CjxwYXRoIGQ9Ik0yOCA2NkwwIDUwTDAgMTZMMjggMEw1NiAxNkw1NiA1MEwyOCA2NkwyOCAxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZjYyOSIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+CjxwYXRoIGQ9Ik0yOCAwTDI4IDM0TDAgNTBMMCA4NEwyOCAxMDBMNTYgODRMNTYgNTBMMjggMzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZTUwMyIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+Cjwvc3ZnPg==");
+}
+
+.page {
+    height: 100%;
+}
+
 .float-top-right {
     position: fixed;
     z-index: 99999999;
@@ -6,16 +15,23 @@
     cursor: pointer;
 }
 
+.float-top-right.btn {
+    border-radius: 2px;
+}
+
 .bg-kazou-bus {
     background-image: url("../img/bannerthemapagina_mixed.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 3px 3px 7px #444444;
 }
 
 .vakantieblok {
-    background-color: rgba(109, 182, 73, 0.7);
-    margin-top: 350px;
-    margin-bottom: 130px;
+    background-color: rgba(0, 207, 151, 0.8);
+    margin-top: 300px;
+    margin-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .kazou-logo {
@@ -23,7 +39,7 @@
     z-index: 9999999;
     background-color: white;
     top: 0px;
-    left: 20px;
+    left: 0px;
     box-shadow: 3px 3px 3px #888888;
-    padding: 5px 5px 5px 5px;
+    padding: 10px 30px 8px 30px;
 }

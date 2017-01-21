@@ -1,7 +1,12 @@
 <?php
     $KEY =  "VVIncapabeleBillie";
+    $KILLSWITCH = false;
+
     $data = openssl_decrypt(base64_decode($_GET["kamp"]), "AES-128-CBC", $KEY);
-    list($vakantie, $beschrijving, $leeftijd, $bestemming, $startdatum, $einddatum) = explode(';', $data);
+    if ($data == "" || $KILLSWITCH == true) {
+        $data = "Crejaksie;nu;het einde der tijden;broekschijtertjes;SPAAAAACE";
+    }
+    list($vakantie, $startdatum, $einddatum, $leeftijd, $bestemming) = explode(';', $data);
 ?>
 
 <!DOCTYPE html>
@@ -20,15 +25,15 @@
 
   </head>
   <body>
-    <div class="container-fluid bg-kazou-bus">
+    <div class="container-fluid bg-kazou-bus page">
         <div class="row vakantieblok">
             <div class="container">
                 <div class="row">
-                    <h1>Proficiat! Jij mag mee met <?php echo $vakantie; ?>!</h1>
+                    <h1>Proficiat! Jij mag mee met <i><?php echo $vakantie; ?></i>!</h1>
                     <p>
                         Zoek je medemoni's, zet je hersens aan het werk, knutsel erop los want van 
-                        <?php echo $startdatum; ?> tot <?php echo $einddatum; ?> verwachten je gastjes (<?php echo $leeftijd; ?>)  
-                        je in <?php echo $bestemming; ?>. Tot dan!
+                        <i><?php echo $startdatum; ?> tot <?php echo $einddatum; ?></i> verwachten je gastjes <i>(<?php echo $leeftijd; ?>)</i>  
+                        je in <i><?php echo $bestemming; ?></i>. Tot dan!
                     </p>
                 </div>
             </div>
