@@ -1,7 +1,7 @@
 <?php
     $KEY =  "VVIncapabeleBillie";
     $data = openssl_decrypt(base64_decode($_GET["kamp"]), "AES-128-CBC", $KEY);
-    list($vakantie, $beschrijving, $leeftijd, $bestemming) = explode(';', $data);
+    list($vakantie, $beschrijving, $leeftijd, $bestemming, $startdatum, $einddatum) = explode(';', $data);
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,6 @@
 
     <!-- Bootstrap -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-
     <!-- my css -->
     <link href="./css/mine.css" rel="stylesheet">
 
@@ -28,7 +27,7 @@
                     <h1>Proficiat! Jij mag mee met <?php echo $vakantie; ?>!</h1>
                     <p>
                         Zoek je medemoni's, zet je hersens aan het werk, knutsel erop los want van 
-                        <?php echo $startdatum; ?> tot <?php echo $einddatum; ?> verwachten je gastjes 
+                        <?php echo $startdatum; ?> tot <?php echo $einddatum; ?> verwachten je gastjes (<?php echo $leeftijd; ?>)  
                         je in <?php echo $bestemming; ?>. Tot dan!
                     </p>
                 </div>
@@ -41,15 +40,15 @@
     </div>
     <div class="kazou-logo"><img src="./img/kazou_70_jaar.png" alt="70 jaar kazou logo." height="200px"></div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- I don't really need any of this....
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) 
     <script src="./js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed 
+    <script src="js/bootstrap.min.js"></script> -->
 
     <script>
         function closeMe()
         {
-            window.open('','_parent',''); 
             window.close();
         }
     </script>
