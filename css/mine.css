@@ -1,0 +1,29 @@
+.float-top-right {
+    position: fixed;
+    z-index: 99999999;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.bg-kazou-bus {
+    background-image: url("../img/bannerthemapagina_mixed.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.vakantieblok {
+    background-color: rgba(109, 182, 73, 0.7);
+    margin-top: 350px;
+    margin-bottom: 130px;
+}
+
+.kazou-logo {
+    position: fixed;
+    z-index: 9999999;
+    background-color: white;
+    top: 0px;
+    left: 20px;
+    box-shadow: 3px 3px 3px #888888;
+    padding: 5px 5px 5px 5px;
+}
