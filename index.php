@@ -2,9 +2,14 @@
     $KEY =  "VVIncapabeleBillie";
     $KILLSWITCH = false;
 
+    date_default_timezone_set("Europe/Brussels");
+    $hours = date("H", time());
+    $minutes = date("i", time());
+    $shouldBeOpen = ($hours >= 21 && $minutes >= 30);
+
     $data = openssl_decrypt(base64_decode($_GET["kamp"]), "AES-128-CBC", $KEY);
-    if ($data == "" || $KILLSWITCH == true) {
-        $data = "Crejaksie;nu;het einde der tijden;broekschijtertjes;SPAAAAACE";
+    if ($data == "" || $KILLSWITCH == true || !$shouldBeOpen) {
+        $data = "Crejaksie;nu;het einde der tijden;broekschijtertjes;het hol van fucking Pluto";
     }
     list($vakantie, $startdatum, $einddatum, $leeftijd, $bestemming) = explode(';', $data);
 ?>
@@ -26,6 +31,16 @@
   </head>
   <body>
     <div class="container-fluid bg-kazou-bus page">
+        <?php if ($shouldBeOpen == false) { ?>
+        <div class="row cheater">
+            <h1>Ge zijt ne cheater! Maakt da ge weg zijt!</h1>
+            <?php if ($hours == 21) {?>
+                <p>Ge moet nog maar <?php echo 30-$minutes; ?> minuten wachten.</p>
+            <?php } else { ?>
+                <p> Ge moet nog <?php echo 21-$hours; ?> uur en wa minuten wachten.</p>
+            <?php } ?>
+        </div>
+        <?php } else { ?>
         <div class="row vakantieblok">
             <div class="container">
                 <div class="row">
@@ -38,9 +53,10 @@
                 </div>
             </div>
         </div>
+        <?php } ?>
     </div>
 
-    <div class="btn btn-danger float-top-right" onclick="closeMe();">
+    <div class="btn btn-kazou float-top-right" onclick="closeMe();">
         <span class="glyphicon glyphicon-remove">
     </div>
     <div class="kazou-logo"><img src="./img/kazou_70_jaar.png" alt="70 jaar kazou logo." height="200px"></div>
